@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+    <head>
+        <title> Password Manager </title>
+        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="https://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!--Asymmetric key stretching-->
+        <script src='three_round_exp/cash.js'></script>
+        <script src='traditional/md5.js'></script>
+    </head>
+    <body>
+
+        <div data-role='page' data-title="login" id="login">
+
+            <form id="clientform">
+            Existing Accounts: <br>
+            <select id="selectAccount">
+
+            </select>
+            <br>
+            New Account: <br>
+            <input type="text" name="accountname" id='accountname'>
+            <br>
+            Password: <br>
+            <input type="text" name="pwd" id='pwd'>
+            <br>
+            Hash: <br>
+            <p id='hash'>   </p>
+            <br>
+        </form>
+        <button type="button" id="createaccount" onclick="cash.createAccount()">Create Account</button><br>
+        <button type="button" id="generatehash" onclick="cash.generateHash()">Generate Hash</button><br>
+
+</div>
+
+</body>
+</html>
+
+<!-- BELOW: we have a "better" but more complex (maybe) form for passwords -->
+
+
+
+
+<!--
+
+        This is a page a simple page.
+        <form>
+            Username: <br>
+            <input type="text" name="username">
+            <br>
+            Password: <br>
+            <input type="text" name="pwd">
+            <br>
+        <form action="page_1">
+            <input type="submit" value="Login">
+        </form>
+
+        <form action="page_2">
+            <input type="submit" value="Create Account">
+        </form>
+    </form>
+
+
+    <section class="loginform cf">
+    <form name="login" action="index_submit" method="get" accept-charset="utf-8">
+        <ul>
+            <li><label for="usermail">Username</label>
+                <input type="text" name="usermail" placeholder="yourname@email.com" required></li>
+                <li><label for="password">Password</label>
+                <input type="password" name="password" placeholder="password" required></li>
+                <li>
+                    <input type="submit" value="Login"></li>
+        </ul>
+    </form>
+    </section>
+
+    </body>
+</html> -->

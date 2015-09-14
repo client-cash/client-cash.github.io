@@ -1,2 +1,1 @@
-# client-cash.github.io
-Client CASH: Protecting Master Passwords
+# randomized-pwd-hash.github.io
