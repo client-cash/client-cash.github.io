@@ -1,7 +1,7 @@
 var cash = (function(){
 
     var module = {};
-    var DET_ROUNDS = 100000;
+    var DET_ROUNDS = 10000;
     //for epsilon = 1.2
     var W = 5.302;
     var PROB1 = 0.566;
@@ -34,10 +34,11 @@ var cash = (function(){
     var ospace = generateOutputSpace();
 
     function pwdhash(password){
-        var hashed_pwd = str_md5(password);
+        var hashed_pwd = SHA256.hash(password);//str_md5(password);
         for (k=1;k<ROUNDS;k++){
-            hashed_pwd = str_md5(hashed_pwd);
+            hashed_pwd = SHA256.hash(password);//str_md5(hashed_pwd);
         }
+        console.log(hashed_pwd);console.log("\n");
         return hashed_pwd;
     }
 
@@ -214,6 +215,14 @@ var cash = (function(){
         var pwd = clientform.elements["pwd"].value;
         console.log("pwd is " + pwd + "\n");
         return;
+    }
+
+    module.pwdhash = function(){
+        var pwd = getPwd();
+        var hash = SHA256.hash(pwd);
+        console.log(hash);
+        console.log('\n');
+        return hash;
     }
 
     return module;
